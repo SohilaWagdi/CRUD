@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>CRUD</title>
+ <link rel="stylesheet" href="css/bootstrap.min.css"/>
+ <link rel="stylesheet" href="css/style.css"/> 
+ <link rel="stylesheet" href="css/all.min.css"/> 
+</head>
+<body>
+<div class="container">
+<div class="w-75 mx-auto py-5">
+  <h1 class="mb-5"> Product Mangment System</h1>
+<div class="form-group mb-3">
+<label for="productName" class="mb-2">productName </label>
+<input type="text" oninput=" validation()" class="form-control" id="productName" placeholder="Enter Product Name"/>
+<p class="text-danger mt-2 d-none ms-2 fs-5" id="wrongname"> 
+   " Invalid Name ... Please enter a valid Product Name "</p>
+</div>
+<div class="form-group mb-3">
+<label for="productPrice " class="mb-2">productPrice </label>
+<input type="number" oninput="validPrice()" class="form-control" id="productPrice" placeholder="Enter product Price "/>
+<p class="text-danger mt-2 d-none ms-2 fs-5" id="wrongprice"> 
+  " Invalid Price..."</p>
+</div>
+<div class="form-group mb-3">
+<label for="productModel" class="mb-2">productModel </label>
+<input type="text" oninput="validModel()" class="form-control" id="productModel" placeholder="Enter product Model"/>
+<p class="text-danger mt-2 d-none ms-2 fs-5" id="wrongModel"> 
+  " Invalid Model ... Please enter tv or mobile or laptop "</p>
+</div>
+<div class="form-group mb-3">
+<label for="productDesc" class="mb-2 ">productDesc</label>
+<textarea id="productDesc" oninput="validDesc()" class="form-control " name="productDesc" ></textarea>
+<p class="text-danger mt-2 d-none ms-2 fs-5" id="descempty"> 
+  "Please Enter Describtion For Product "</p>
+</div>
+<button onclick="addProduct()" id="addprodbtn" class="btn btn-primary btn-lg"> Add Product  </button>
+<button id="updatebtn" onclick="updateElements()" class="btn btn-warning btn-lg d-none"> Update Product  </button>
+
+
+
+
+</div>
+
+<div class="w-75 mx-auto py-5">
+  <h4> Search...</h4>
+  <input oninput="searchByName(this.value)" type="text" class="form-control">
+</div>
+
+<table class="table w-75 text-white mx-auto text-center">
+<thead>
+  <th> index</th>
+  <th> Product Name</th>
+  <th> Product Price</th>
+  <th> Product Model</th>
+  <th> Product Description</th>
+  <th> Update</th>
+  <th>Delete</th>
+</thead>
+<tbody id="tBody">
+ 
+</tbody>
+</table>
+
+
+</div>
+
+ 
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"> </script>
+</body>
+</html>
